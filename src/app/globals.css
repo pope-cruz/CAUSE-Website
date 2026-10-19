@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/*
+ * CAUSE palette, decoded from the official swatch file (cause-swatch.aco):
+ * #305db6 #719aed #79dbff #c3dff4 #ffffff #fcbddf #f96565 #d94949.
+ * Paper and ink are warm neutrals chosen to sit alongside it.
+ */
+@theme {
+  --color-paper: #fbf7f1;
+  --color-sand: #f3ece1;
+  --color-ink: #16223f;
+  --color-ink-soft: #4a5370;
+  --color-cause-blue: #305db6;
+  --color-cause-blue-deep: #22468f;
+  --color-cause-periwinkle: #719aed;
+  --color-cause-sky: #79dbff;
+  --color-cause-mist: #c3dff4;
+  --color-cause-blush: #fcbddf;
+  --color-cause-coral: #f96565;
+  --color-cause-red: #d94949;
+  /* Darker red for small text so it meets WCAG AA on light backgrounds. */
+  --color-cause-red-deep: #ad2c2c;
+
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored section headings clear of the sticky header. */
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-cause-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
