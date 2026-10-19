@@ -82,21 +82,25 @@ CAUSE Philippines documents. Access to them is restricted to the team.
 - [2026–27 Webinar Curriculum](https://docs.google.com/document/d/1as5l7CdaD5ybN6pnCiyKqFzS_iW_SBw6x9LFqTf5d5U/edit): workshop topics (speakers and dates are deliberately not published)
 - Photo archives: [site photos](https://drive.google.com/drive/folders/1EAYIrwTHqnxolL3bNep55yNbIV9GAsCf), [CAUSE takeover photos](https://drive.google.com/drive/folders/1-2H41DScO1-5x1IGqJ2W3u8OvKU3kkRo)
 
-Brand palette, sampled from the official logo and defined in
-`src/app/globals.css`:
+## Design
+
+Deliberately minimal, in the spirit of sites like Khan Academy: a white page,
+one midnight hero band with "Get started" rows, plain headlines, hairline
+dividers, and almost no decoration. The logo carries the flag colors, so the
+UI palette stays small (`src/app/globals.css`):
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| `midnight` | `#001b30` | Logo field; header, hero, impact, footer |
-| `sky` | `#6dcff6` | Logo letters; accents on dark, impact strip |
-| `flag-red` | `#bd1a2a` | Flag stripes; primary buttons, Get involved |
-| `flag-navy` | `#253b52` | Flag canton; PH dot |
-| `pink` | `#f26d7d` | Letter shadows; small accents on dark |
-| `sky-deep` | `#0b6a94` | Blue text on white (AA contrast) |
+| `midnight` | `#001b30` | Logo field; hero band, primary button, rules |
+| `sky` | `#6dcff6` | Logo letters; accent text on midnight |
+| `sky-deep` | `#0b6a94` | Accent and link text on white (6.0:1) |
+| `ink-soft` | `#4a5d70` | Secondary text |
+| `line` / `cloud` | `#e3e8ee` / `#f5f7f9` | Hairlines / alternate section background |
 
-The logo images sit on their own midnight background, so only place them on
-`bg-midnight` surfaces. A transparent SVG of the logo would allow light
-backgrounds too.
+Logo files in `public/brand/`: `*-light.webp` have a transparent background
+for light surfaces (the lockup's subtitle is recolored to midnight so it stays
+legible); `cause-logo.webp` and `cause-wordmark.webp` keep the original
+midnight field for dark surfaces.
 
 ## Outstanding confirmations
 
@@ -124,8 +128,9 @@ Before launch, the CAUSE team should confirm:
 
 ## Assets needed
 
-- **Logo as SVG or transparent PNG** (nice to have). The site uses raster
-  crops of the logo on its midnight field (`public/brand/`).
+- **Logo as SVG** (nice to have). The site uses raster crops of the logo
+  (`public/brand/`); the transparent versions were keyed out of the JPEG, so a
+  vector original would be sharper.
 - **Photos** for the gallery, with consent from everyone pictured. The 2021
   website plan (*About site layout* doc) points to images that could be added
   once approved: `CAUSE Founders.jpg`, four `with EdUSA` event photos, the

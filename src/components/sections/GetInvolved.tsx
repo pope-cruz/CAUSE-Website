@@ -5,22 +5,16 @@ export function GetInvolved() {
   return (
     <Section
       id="get-involved"
-      eyebrow="Get involved"
-      title="There is a place for you in CAUSE."
-      intro="Whether you are applying, have been through it, or want to help from your organization, here is how to take part."
-      tone="red"
+      title="Get involved"
+      intro="Whether you are applying, have been through it, or want to help from your organization, there is a place for you in CAUSE."
     >
-      <ul className="grid gap-6 lg:grid-cols-3">
+      <ul className="grid gap-10 lg:grid-cols-3 lg:gap-8">
         {involvement.map((item) => (
-          <li
-            key={item.id}
-            id={item.id}
-            className="flex flex-col rounded-3xl bg-white p-8 text-midnight shadow-[0_20px_40px_-25px_rgba(0,0,0,0.5)]"
-          >
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-flag-red">{item.title}</p>
-            <h3 className="mt-3 font-display text-2xl font-semibold">{item.heading}</h3>
-            <p className="mt-3 flex-1 text-ink-soft text-pretty">{item.body}</p>
-            <div className="mt-6 rounded-2xl bg-sky-tint p-4 text-[0.95rem]">
+          <li key={item.id} id={item.id} className="flex flex-col border-t-2 border-midnight pt-5">
+            <p className="text-sm font-semibold text-ink-soft">{item.title}</p>
+            <h3 className="mt-1 font-display text-2xl font-semibold">{item.heading}</h3>
+            <p className="mt-2 flex-1 text-ink-soft text-pretty">{item.body}</p>
+            <p className="mt-5 text-[0.95rem]">
               {CONTACT_EMAIL ? (
                 <a
                   href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(item.heading)}`}
@@ -29,9 +23,9 @@ export function GetInvolved() {
                   Email {CONTACT_EMAIL}
                 </a>
               ) : (
-                <p>{site.applicationNotice}</p>
+                site.applicationNotice
               )}
-            </div>
+            </p>
           </li>
         ))}
       </ul>

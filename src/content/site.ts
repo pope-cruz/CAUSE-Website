@@ -45,7 +45,6 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "Student-run nonprofit · Since 2018",
   title: "Opportunity should have",
   /** Rendered in sky blue after `title`. */
   titleAccent: "no borders.",
@@ -88,21 +87,9 @@ export const about = {
   belief: "Where a student comes from should",
   /** Rendered in sky blue after `belief`. */
   beliefAccent: "not determine how far they can go.",
-  values: [
-    "Low-income students are the most connected to the pressing issues of the Philippines. We want to help them pursue a multifaceted, global college education that broadens how they might address their communities’ problems in the future.",
+  /** Who CAUSE serves, from the Aug 2026 values copy. */
+  reach:
     "Different issues permeate different communities, so we support students from all over the country — not just in the capital, but also in far-flung provinces where problems often remain unattended.",
-    "By helping these students develop their skills, we strive to cultivate generations of scholars who will foster multi-sectoral growth across the Philippines — and to be a community they can rely on.",
-  ],
-  regions: [
-    { name: "Luzon", focus: "solving traffic and urban mobility" },
-    { name: "Visayas", focus: "geospatial support for fishing communities" },
-    { name: "Mindanao", focus: "advancing inclusive development" },
-  ],
-  founders: [
-    { name: "Janelle Perez", initials: "JP" },
-    { name: "Rafael Santiago", initials: "RS" },
-    { name: "Philippe Bungabong", initials: "PB" },
-  ],
 };
 
 export const programs = [
@@ -111,18 +98,13 @@ export const programs = [
     title: "Mentorship",
     summary:
       "Individualized college application mentorship. Each mentee works with mentors who have gone through the process themselves — from building a school list to submitting applications and weighing offers.",
-    points: [
-      "One-on-one guidance through each stage of the application",
-      "Mentors studying at universities in the Philippines and abroad",
-      "Support with scholarship and financial aid applications",
-    ],
   },
   {
     id: "workshops",
     title: "College Application Workshops",
     summary:
       "A webinar series that supplements one-on-one mentorship. Sessions move from general questions to specifics, led by invited mentors.",
-    points: [
+    topics: [
       "Application timelines and what to prepare",
       "Letters of recommendation",
       "Awards and extracurriculars",
@@ -140,11 +122,6 @@ export const programs = [
     title: "Community & Outreach",
     summary:
       "School and community outreach that brings information about studying abroad to students who might not otherwise hear about it — especially outside Metro Manila.",
-    points: [
-      "Information sessions for schools and communities",
-      "Collaborations with organizations that share our mission",
-      "Open educational sessions for aspiring applicants",
-    ],
   },
 ];
 
@@ -207,18 +184,24 @@ export const collaborations = [
 export const involvement = [
   {
     id: "mentees",
+    role: "Student",
+    tagline: "Applying to universities abroad",
     title: "For students",
     heading: "Become a mentee",
     body: "If you are a Filipino high school student hoping to study abroad — especially if cost feels like a barrier — CAUSE mentorship and webinars are for you.",
   },
   {
     id: "mentors",
+    role: "Mentor",
+    tagline: "Studying at a university and ready to help",
     title: "For university students",
     heading: "Become a mentor",
     body: "Studying at a university in the Philippines or abroad? Share what you learned with the next generation of applicants.",
   },
   {
     id: "partners",
+    role: "Organization",
+    tagline: "Supporting Filipino students together",
     title: "For organizations",
     heading: "Partner with us",
     body: "Schools, nonprofits, and organizations that share our mission can work with CAUSE on outreach, sessions, and student support.",
