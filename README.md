@@ -12,8 +12,10 @@ in `out/` that any static host can serve.
 
 - [Next.js 16](https://nextjs.org) App Router with `output: "export"`
 - TypeScript, Tailwind CSS 4
-- Fonts: Fraunces (headings) and Source Sans 3 (body), self-hosted at build
+- Fonts: Outfit (headings) and Source Sans 3 (body), self-hosted at build
   time through `next/font/google`
+- Official CAUSE logo in `public/brand/` (wordmark and full lockup, cropped
+  from the brand file)
 
 ## Run locally
 
@@ -76,12 +78,25 @@ Copy comes from the approved editorial brief
 CAUSE Philippines documents. Access to them is restricted to the team.
 
 - [About Us (Aug 2026)](https://docs.google.com/document/d/1-CHGjjfZqY2Ofw_vfQ6n0LcOlcrCDSgDgULgdB01rkE/edit): history, values, founders, and candidate metrics
-- [Logo and color swatches](https://drive.google.com/drive/folders/1ZToQp3cPCnuFhZ9KFAVUj246XEuAL810): palette decoded from `cause-swatch.aco`
+- [Logo and color swatches](https://drive.google.com/drive/folders/1ZToQp3cPCnuFhZ9KFAVUj246XEuAL810): the official logo and `cause-swatch.aco`
 - [2026–27 Webinar Curriculum](https://docs.google.com/document/d/1as5l7CdaD5ybN6pnCiyKqFzS_iW_SBw6x9LFqTf5d5U/edit): workshop topics (speakers and dates are deliberately not published)
 - Photo archives: [site photos](https://drive.google.com/drive/folders/1EAYIrwTHqnxolL3bNep55yNbIV9GAsCf), [CAUSE takeover photos](https://drive.google.com/drive/folders/1-2H41DScO1-5x1IGqJ2W3u8OvKU3kkRo)
 
-Brand palette (from the official swatch file): `#305db6`, `#719aed`,
-`#79dbff`, `#c3dff4`, `#ffffff`, `#fcbddf`, `#f96565`, `#d94949`.
+Brand palette, sampled from the official logo and defined in
+`src/app/globals.css`:
+
+| Token | Hex | Use |
+| --- | --- | --- |
+| `midnight` | `#001b30` | Logo field; header, hero, impact, footer |
+| `sky` | `#6dcff6` | Logo letters; accents on dark, impact strip |
+| `flag-red` | `#bd1a2a` | Flag stripes; primary buttons, Get involved |
+| `flag-navy` | `#253b52` | Flag canton; PH dot |
+| `pink` | `#f26d7d` | Letter shadows; small accents on dark |
+| `sky-deep` | `#0b6a94` | Blue text on white (AA contrast) |
+
+The logo images sit on their own midnight background, so only place them on
+`bg-midnight` surfaces. A transparent SVG of the logo would allow light
+backgrounds too.
 
 ## Outstanding confirmations
 
@@ -109,10 +124,13 @@ Before launch, the CAUSE team should confirm:
 
 ## Assets needed
 
-- **Official logo** as SVG or transparent PNG. The Drive has `CAUSE Logo.jpg`.
-  Until a logo is added, the site uses a text wordmark (`src/components/Wordmark.tsx`).
-- **Photos** for the hero and gallery, with consent from everyone pictured.
-  No photos are published yet.
+- **Logo as SVG or transparent PNG** (nice to have). The site uses raster
+  crops of the logo on its midnight field (`public/brand/`).
+- **Photos** for the gallery, with consent from everyone pictured. The 2021
+  website plan (*About site layout* doc) points to images that could be added
+  once approved: `CAUSE Founders.jpg`, four `with EdUSA` event photos, the
+  EducationUSA and Workbean logos, and `Brag Sheet 2018-2021.jpeg`. Drop
+  approved files into `public/photos/` and list them in `gallery`.
 - **Brand fonts.** The brand kit includes TT Chocolates and Appetite, which are
   commercial fonts and are not copied here. If CAUSE holds web licenses, they
-  can replace Fraunces and Source Sans 3 in `src/app/layout.tsx`.
+  can replace Outfit and Source Sans 3 in `src/app/layout.tsx`.

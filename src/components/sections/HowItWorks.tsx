@@ -16,12 +16,12 @@ export function HowItWorks() {
     >
       <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {journey.map((item, index) => (
-          <li key={item.step} className="relative rounded-3xl bg-white p-7 shadow-[0_1px_0_rgba(22,34,63,0.08)] ring-1 ring-ink/10">
-            <span className="font-display text-sm font-semibold text-cause-red-deep">
-              Step {index + 1}
+          <li key={item.step} className="rounded-3xl bg-midnight p-7 text-white">
+            <span className="grid size-10 place-items-center rounded-full bg-sky font-display text-lg font-bold text-midnight">
+              {index + 1}
             </span>
-            <h3 className="mt-2 font-display text-3xl font-semibold">{item.step}</h3>
-            <p className="mt-3 text-ink-soft text-pretty">{item.detail}</p>
+            <h3 className="mt-5 font-display text-3xl font-semibold">{item.step}</h3>
+            <p className="mt-3 text-mist text-pretty">{item.detail}</p>
           </li>
         ))}
       </ol>

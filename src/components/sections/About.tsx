@@ -16,12 +16,10 @@ export function About() {
           ))}
         </div>
 
-        <aside className="self-start rounded-3xl bg-cause-blush/45 p-8 sm:p-10">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cause-red-deep">
-            What we believe
-          </p>
-          <p className="mt-4 font-display text-3xl font-medium leading-tight text-balance">
-            {about.belief}
+        <aside className="self-start rounded-3xl bg-midnight p-8 text-white sm:p-10">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-pink">What we believe</p>
+          <p className="mt-4 font-display text-3xl font-semibold leading-tight text-balance">
+            {about.belief} <span className="text-sky">{about.beliefAccent}</span>
           </p>
         </aside>
       </div>
@@ -38,10 +36,10 @@ export function About() {
 
         <div>
           <h3 className="font-display text-2xl font-semibold">Our students care about</h3>
-          <ul className="mt-5 divide-y divide-ink/10 border-y border-ink/10">
+          <ul className="mt-5 divide-y divide-midnight/10 border-y border-midnight/10">
             {about.regions.map((region) => (
               <li key={region.name} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-6">
-                <span className="w-32 shrink-0 font-display text-xl font-semibold text-cause-blue">
+                <span className="w-32 shrink-0 font-display text-xl font-semibold text-sky-deep">
                   {region.name}
                 </span>
                 <span className="text-ink-soft">{region.focus}</span>
@@ -55,7 +53,7 @@ export function About() {
               <li key={founder.name} className="flex items-center gap-4 sm:flex-col sm:items-start">
                 <span
                   aria-hidden="true"
-                  className="grid size-14 shrink-0 place-items-center rounded-full bg-cause-mist font-display text-lg font-semibold text-cause-blue-deep"
+                  className="grid size-14 shrink-0 place-items-center rounded-full bg-sky font-display text-lg font-bold text-midnight"
                 >
                   {founder.initials}
                 </span>

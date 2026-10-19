@@ -46,7 +46,9 @@ export const nav = [
 
 export const hero = {
   eyebrow: "Student-run nonprofit · Since 2018",
-  title: "Opportunity should have no borders.",
+  title: "Opportunity should have",
+  /** Rendered in sky blue after `title`. */
+  titleAccent: "no borders.",
   subtitle:
     "Helping Filipino students navigate pathways to higher education around the world.",
   belief: "Talent is everywhere, but opportunity is not.",
@@ -83,7 +85,9 @@ export const about = {
     "CAUSE Philippines was co-founded by Janelle Perez, Rafael Santiago, and Philippe Bungabong — three students who graduated from high school in 2018 and received scholarships to pursue college in the United States.",
     "They connected through a shared passion for educational equity and the belief that talent is everywhere but opportunity is not. Through their initiative, the Coalition of American University Student Experiences Philippines was created, committed to helping low-income Filipino students receive a quality college education around the globe.",
   ],
-  belief: "Where a student comes from should not determine how far they can go.",
+  belief: "Where a student comes from should",
+  /** Rendered in sky blue after `belief`. */
+  beliefAccent: "not determine how far they can go.",
   values: [
     "Low-income students are the most connected to the pressing issues of the Philippines. We want to help them pursue a multifaceted, global college education that broadens how they might address their communities’ problems in the future.",
     "Different issues permeate different communities, so we support students from all over the country — not just in the capital, but also in far-flung provinces where problems often remain unattended.",

@@ -1,26 +1,33 @@
-import { SunMark } from "./SunMark";
-
 type WordmarkProps = {
-  tone?: "dark" | "light";
+  variant?: "wordmark" | "lockup";
+  className?: string;
 };
 
 /**
- * Text wordmark used until the official logo file is added to /public.
- * See README.md → "Assets needed".
+ * Official CAUSE logo, cropped from the brand file. Both images sit on the
+ * logo's own midnight field, so place them on `bg-midnight` surfaces.
  */
-export function Wordmark({ tone = "dark" }: WordmarkProps) {
-  const text = tone === "dark" ? "text-ink" : "text-white";
+export function Wordmark({ variant = "wordmark", className }: WordmarkProps) {
+  if (variant === "lockup") {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/brand/cause-logo.webp"
+        width={1200}
+        height={431}
+        alt="CAUSE — Coalition of American University Student Experiences: Philippines"
+        className={className}
+      />
+    );
+  }
   return (
-    <span className={`inline-flex items-center gap-2.5 ${text}`}>
-      <SunMark className="size-7 shrink-0 text-cause-coral" />
-      <span className="flex flex-col leading-none">
-        <span className="font-display text-xl font-semibold tracking-tight">
-          CAUSE
-        </span>
-        <span className="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.22em] opacity-80">
-          Philippines
-        </span>
-      </span>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/brand/cause-wordmark.webp"
+      width={430}
+      height={96}
+      alt="CAUSE Philippines"
+      className={className}
+    />
   );
 }

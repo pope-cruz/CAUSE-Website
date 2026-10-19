@@ -22,10 +22,10 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-midnight text-white">
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="rounded-md" aria-label="CAUSE Philippines — home">
-          <Wordmark />
+        <a href="#top" className="rounded-md">
+          <Wordmark className="h-8 w-auto sm:h-9" />
         </a>
 
         <nav aria-label="Primary" className="hidden md:block">
@@ -34,7 +34,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-[0.95rem] font-semibold text-ink-soft transition-colors hover:bg-sand hover:text-ink"
+                  className="rounded-full px-4 py-2 text-[0.95rem] font-semibold text-white/85 transition-colors hover:bg-white/10 hover:text-sky"
                 >
                   {item.label}
                 </a>
@@ -46,7 +46,7 @@ export function SiteHeader() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold md:hidden"
+          className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm font-semibold md:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
@@ -66,7 +66,7 @@ export function SiteHeader() {
         id={menuId}
         aria-label="Primary"
         hidden={!open}
-        className="border-t border-ink/10 bg-paper md:hidden"
+        className="border-t border-white/10 bg-midnight md:hidden"
       >
         <ul className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
           {nav.map((item) => (
@@ -74,7 +74,7 @@ export function SiteHeader() {
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-3 text-lg font-semibold text-ink hover:bg-sand"
+                className="block rounded-lg px-3 py-3 text-lg font-semibold hover:bg-white/10 hover:text-sky"
               >
                 {item.label}
               </a>
