@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/*
+ * Minimal palette drawn from the official CAUSE logo: midnight field and sky
+ * letters; the logo itself carries the flag colors. Text pairings meet WCAG
+ * AA: sky on midnight 9.9:1, sky-deep on white 6.0:1.
+ */
+@theme {
+  --color-midnight: #001b30;
+  --color-midnight-2: #0b2a45;
+  --color-sky: #6dcff6;
+  --color-sky-tint: #eaf7fd;
+  --color-sky-deep: #0b6a94;
+  --color-ink: #001b30;
+  --color-ink-soft: #4a5d70;
+  --color-mist: #b9c7d4;
+  --color-line: #e3e8ee;
+  --color-cloud: #f5f7f9;
+
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored section headings clear of the sticky header. */
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sky);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
